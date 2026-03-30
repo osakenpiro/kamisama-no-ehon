@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かみさまたちのじこしょうかい — にんげんとかみの10万年史</title>
+<meta property="og:title" content="かみさまたちのじこしょうかい — にんげんとかみの10万年史">
+<meta property="og:description" content="アニマ、ブッダさん、モノさん、ヒンドゥ、サイエン先輩 — 5つのかみさまが自己紹介する絵本。え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ">
+<meta property="og:url" content="https://osakenpiro.github.io/kamisama-no-ehon/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="かみさまたちのじこしょうかい">
+<meta name="twitter:description" content="アニマ・ブッダさん・モノさん・ヒンドゥ・サイエン先輩 — にんげんとかみの10万年をたどる絵本。">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFDF5;
+    --warm-brown: #5D4037;
+    --anima-green: #33691E;
+    --buddha-gold: #F9A825;
+    --mono-light: #FFD54F;
+    --hindu-saffron: #E65100;
+    --science-blue: #1565C0;
+    --page-shadow: rgba(93, 64, 55, 0.12);
+    --text-dark: #3E2723;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #EDE7F6 0%, #FFFDF5 50%, #FFF8E1 100%);
+    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(249,168,37,0.12) 0%, transparent 40%),
+      radial-gradient(circle at 70% 60%, rgba(21,101,192,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(255,253,245,0.8) 0%, transparent 70%);
+  }
+  .cover-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.4;
+    color: #4E342E;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+  }
+  .cover-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #4E342E;
+    opacity: 0.7;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .cover-characters {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cover-char {
+    font-size: 3.5rem;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  }
+  .cover-char:nth-child(2) { animation-delay: 0.5s; }
+  .cover-char:nth-child(3) { animation-delay: 1s; }
+  .cover-char:nth-child(4) { animation-delay: 1.5s; }
+  .cover-char:nth-child(5) { animation-delay: 2s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .scroll-hint {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #4E342E;
+    opacity: 0.5;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+  .series-badge {
+    position: relative;
+    z-index: 1;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(78,52,46,0.08);
+    border: 1px solid rgba(78,52,46,0.15);
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: #4E342E;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .series-badge a { color: #4E342E; text-decoration: underline; }
+  .cover-note {
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #4E342E;
+    opacity: 0.5;
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .illustration {
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border: 3px solid rgba(93,64,55,0.1);
+  }
+  .cover-illustration {
+    width: 80%;
+    max-width: 500px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border: 4px solid rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 1;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 3rem 2.5rem;
+    background: var(--cream);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px var(--page-shadow), inset 0 0 60px rgba(93,64,55,0.03);
+    position: relative;
+    border: 1px solid rgba(93,64,55,0.1);
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    left: 2rem; top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(93,64,55,0.08);
+  }
+  .page-number { position: absolute; bottom: 1rem; right: 1.5rem; font-size: 0.8rem; color: var(--warm-brown); opacity: 0.4; }
+
+  .chapter-header { text-align: center; margin-bottom: 2rem; }
+  .chapter-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+  .chapter-title { font-size: 1.8rem; font-weight: 900; line-height: 1.3; }
+  .chapter-subtitle { font-size: 1rem; opacity: 0.6; margin-top: 0.3rem; }
+
+  .color-anima { color: var(--anima-green); }
+  .color-buddha { color: #BF8C00; }
+  .color-mono { color: #B8860B; }
+  .color-hindu { color: var(--hindu-saffron); }
+  .color-science { color: var(--science-blue); }
+
+  .char-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 5px solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .char-card.anima { border-color: var(--anima-green); }
+  .char-card.buddha { border-color: var(--buddha-gold); }
+  .char-card.mono { border-color: var(--mono-light); }
+  .char-card.hindu { border-color: var(--hindu-saffron); }
+  .char-card.science { border-color: var(--science-blue); }
+
+  .char-name { font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; gap: 0.5rem; }
+  .char-species { font-size: 0.8rem; opacity: 0.5; font-weight: 400; font-style: italic; }
+  .char-quote { font-size: 1.1rem; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 0.5rem; position: relative; line-height: 1.7; }
+  .char-quote::before { content: '「'; font-size: 1.5rem; opacity: 0.3; position: absolute; top: 0.3rem; left: 0.5rem; }
+
+  .relationship { display: flex; align-items: center; gap: 0.8rem; margin: 1rem 0; font-size: 0.95rem; }
+  .rel-label { font-weight: 700; white-space: nowrap; }
+  .rel-bar { flex: 1; height: 12px; background: #EEE; border-radius: 6px; overflow: hidden; }
+  .rel-fill { height: 100%; border-radius: 6px; }
+  .rel-fill.ancient { background: linear-gradient(90deg, #558B2F, #33691E); }
+  .rel-fill.serene { background: linear-gradient(90deg, #F9A825, #F57F17); }
+  .rel-fill.radiant { background: linear-gradient(90deg, #FFD54F, #FFC107); }
+  .rel-fill.rainbow { background: linear-gradient(90deg, #E65100, #FF6D00, #FFD54F); }
+  .rel-fill.rational { background: linear-gradient(90deg, #1565C0, #42A5F5); }
+
+  .story { font-size: 1.05rem; line-height: 2; margin: 1.2rem 0; }
+  .story strong { color: var(--warm-brown); }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(249,168,37,0.08), rgba(93,64,55,0.08));
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px dashed rgba(93,64,55,0.2);
+  }
+  .highlight-box h3 { font-size: 1.1rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
+  .item-card { background: white; border-radius: 0.8rem; padding: 0.8rem 0.5rem; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+  .item-card:hover { transform: translateY(-3px); }
+  .item-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.3rem; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.08)); }
+  .item-label { font-size: 0.8rem; font-weight: 700; color: var(--text-dark); opacity: 0.7; line-height: 1.3; }
+  .item-grid-title { font-size: 1rem; font-weight: 900; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+
+  .finale { text-align: center; padding: 3rem 2rem; max-width: 800px; margin: 3rem auto; }
+  .finale-title { font-size: 1.8rem; font-weight: 900; color: #4E342E; margin-bottom: 1.5rem; }
+  .finale-message { font-size: 1.1rem; line-height: 2; color: var(--text-dark); opacity: 0.8; }
+  .emoji-parade { font-size: 2.5rem; margin: 2rem 0; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .colophon { margin-top: 3rem; font-size: 0.8rem; opacity: 0.4; }
+  .series-links { margin-top: 2rem; font-size: 0.95rem; line-height: 2; }
+  .series-links a { color: #4E342E; text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .page { margin: 1.5rem 0.8rem; padding: 2rem 1.5rem; }
+    .page::before { left: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-title">
+    かみさまたちの じこしょうかい<br>
+    <span style="font-size: 0.6em; opacity: 0.7;">— にんげんと かみの 10万年史 —</span>
+  </div>
+  <div class="cover-subtitle">え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ</div>
+  <div class="cover-characters">
+    <span class="cover-char">🌀</span>
+    <span class="cover-char">🪷</span>
+    <span class="cover-char">☝️</span>
+    <span class="cover-char">🕉️</span>
+    <span class="cover-char">🔬</span>
+  </div>
+  <img src="images/cover.png" alt="かみさまたち表紙 — アニマ・ブッダさん・モノさん・ヒンドゥ・サイエン先輩" class="cover-illustration">
+  <div class="series-badge">📚 じこしょうかいシリーズ 第6巻<br><a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a></div>
+  <div class="cover-note">※ この巻は とくていの 宗教を すすめたり けなしたり するものでは ありません。</div>
+  <div class="scroll-hint">↓ スクロールして よんでね ↓</div>
+</section>
+
+<!-- PROLOGUE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🙏</span>
+    <div class="chapter-title">はじめに</div>
+    <div class="chapter-subtitle">にんげんの「なぜ？」と かみさま</div>
+  </div>
+  <p class="story">
+    にんげんは、いつも「なぜ？」と きいてきた。<br>
+    なぜ あめが ふるの？ なぜ 人は しぬの？ なぜ ぼくは ここに いるの？
+  </p>
+  <p class="story">
+    こたえが わからないとき、にんげんは「<strong>かみさま</strong>」を つくった。<br>
+    かみさまは、にんげんの「わからない」を うけとめる うつわ。
+  </p>
+  <p class="story">
+    これは、にんげんの こころが うみだした <strong>みえない ともだちたち</strong> の おはなし。
+  </p>
+  <span class="page-number">1</span>
+</section>
+
+<!-- CHAPTER 1: ANIMISM -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🌀</span>
+    <div class="chapter-title color-anima">だい1しょう：アニマ</div>
+    <div class="chapter-subtitle">— すべてに たましいが ある —</div>
+  </div>
+  <img src="images/ch1.png" alt="アニマ — 森の精霊と鳥居" class="illustration">
+
+  <div class="char-card anima">
+    <div class="char-name">🌀 アニマ <span class="char-species">Animism</span></div>
+    <div class="char-quote">
+      かわにも、いわにも、きにも、かぜにも、たましいが ある。<br>
+      にんげんだけが とくべつだなんて、だれが きめたの？
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ancient" style="width: 99%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">
+    アニマは <strong>アニミズム</strong> — <strong>すべてのものに 霊（たましい）が ある</strong>という かんがえかた。<br>
+    にんげんの <strong>いちばん ふるい しんこう</strong>。おそらく 10万年 いじょうの 歴史。
+  </p>
+  <p class="story">
+    山に かみが いる。川に かみが いる。おおきな 木に かみが いる。<br>
+    日本の「八百万の神」（やおよろずのかみ）も アニミズムの なかま。
+  </p>
+  <p class="story">
+    アニミズムの せかいでは、にんげんは 自然の <strong>いちぶ</strong> であって、支配者ではない。<br>
+    第1巻から ずっと 言ってきたこと —— <strong>「にんげんは ひとりで ここまで きたわけじゃない」</strong> ——<br>
+    じつは これは、アニマが 10万年まえから 知っていたこと。
+  </p>
+
+  <div class="highlight-box">
+    <h3>💡 アニマの せかい</h3>
+    <div class="item-grid-title">🌀 アニマの なかまたち</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🗻</span><span class="item-label">山の神</span></div>
+      <div class="item-card"><span class="item-emoji">🌊</span><span class="item-label">海の神</span></div>
+      <div class="item-card"><span class="item-emoji">🌲</span><span class="item-label">森の精霊</span></div>
+      <div class="item-card"><span class="item-emoji">⛩️</span><span class="item-label">神道</span></div>
+      <div class="item-card"><span class="item-emoji">🪶</span><span class="item-label">先住民の信仰</span></div>
+      <div class="item-card"><span class="item-emoji">🐻</span><span class="item-label">動物崇拝</span></div>
+    </div>
+  </div>
+  <span class="page-number">2–3</span>
+</section>
+
+<!-- CHAPTER 2: BUDDHISM -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🪷</span>
+    <div class="chapter-title color-buddha">だい2しょう：ブッダさん</div>
+    <div class="chapter-subtitle">— くるしみから はなれる みち —</div>
+  </div>
+  <img src="images/ch2.png" alt="ブッダさん — 蓮の上の空" class="illustration">
+
+  <div class="char-card buddha">
+    <div class="char-name">🪷 ブッダさん <span class="char-species">Buddhism</span></div>
+    <div class="char-quote">
+      いきる ことは くるしい。でも その くるしみには りゆうが ある。<br>
+      りゆうが わかれば、はなれかたも わかる。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill serene" style="width: 99%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">
+    ブッダさんは <strong>仏教</strong> — 約2500年前、インドの シッダールタが はじめた おしえ。
+  </p>
+  <p class="story">
+    仏教の コアは <strong>四諦</strong>（したい）：<br>
+    <strong>①</strong> 生は 苦しい（苦諦）<br>
+    <strong>②</strong> 苦しみには 原因がある（集諦）<br>
+    <strong>③</strong> 苦しみは なくせる（滅諦）<br>
+    <strong>④</strong> そのための 方法が ある（道諦）
+  </p>
+  <p class="story">
+    ポイントは「<strong>神に すくってもらう</strong>」のではなく、「<strong>自分で 気づく</strong>」こと。<br>
+    仏教は「信じろ」ではなく「<strong>ためしてみろ</strong>」と いう。かなり 科学的。
+  </p>
+
+  <div class="highlight-box">
+    <h3>💡 ブッダさんの おしえ</h3>
+    <div class="item-grid-title">🪷 仏教の せかい</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🪷</span><span class="item-label">蓮の花</span></div>
+      <div class="item-card"><span class="item-emoji">🧘</span><span class="item-label">瞑想</span></div>
+      <div class="item-card"><span class="item-emoji">📿</span><span class="item-label">数珠</span></div>
+      <div class="item-card"><span class="item-emoji">🏯</span><span class="item-label">お寺</span></div>
+      <div class="item-card"><span class="item-emoji">♻️</span><span class="item-label">輪廻転生</span></div>
+      <div class="item-card"><span class="item-emoji">🍵</span><span class="item-label">禅（Zen）</span></div>
+    </div>
+  </div>
+  <span class="page-number">4–5</span>
+</section>
+
+<!-- CHAPTER 3: MONOTHEISM -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">☝️</span>
+    <div class="chapter-title color-mono">だい3しょう：モノさん</div>
+    <div class="chapter-subtitle">— ひとつの かみが すべてを つくった —</div>
+  </div>
+  <img src="images/ch3.png" alt="モノさん — 三つの祈りの場を照らす光" class="illustration">
+
+  <div class="char-card mono">
+    <div class="char-name">☝️ モノさん <span class="char-species">Monotheism</span></div>
+    <div class="char-quote">
+      かみは ひとつ。世界を つくったのは そのひとつの かみ。<br>
+      ……でも その かみの よびかたで、にんげんは ずっと あらそってる。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill radiant" style="width: 85%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    モノさんは <strong>一神教</strong> — ユダヤ教、キリスト教、イスラム教の 3つの 兄弟。<br>
+    じつは 3つとも <strong>おなじ 神（アブラハムの神）</strong> を しんじている。
+  </p>
+  <p class="story">
+    ユダヤ教（紀元前2000年ごろ〜）が いちばん 古く、<br>
+    そこから キリスト教（1世紀）、イスラム教（7世紀）が わかれた。
+  </p>
+  <p class="story">
+    世界人口の <strong>半分以上</strong>（約40億人）が この 3つのどれかを しんじている。<br>
+    「ひとつの かみ」という アイデアは、法律、科学、人権の かんがえかたにも 影響した。<br>
+    でも 同時に、「うちの かみが ただしい」という あらそいも うんだ。
+  </p>
+
+  <div class="highlight-box">
+    <h3>💡 モノさんの 3つの かお</h3>
+    <div class="item-grid-title">☝️ 一神教の せかい</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">✡️</span><span class="item-label">ユダヤ教</span></div>
+      <div class="item-card"><span class="item-emoji">✝️</span><span class="item-label">キリスト教</span></div>
+      <div class="item-card"><span class="item-emoji">☪️</span><span class="item-label">イスラム教</span></div>
+      <div class="item-card"><span class="item-emoji">📖</span><span class="item-label">聖書・コーラン</span></div>
+      <div class="item-card"><span class="item-emoji">🕌</span><span class="item-label">モスク</span></div>
+      <div class="item-card"><span class="item-emoji">⚖️</span><span class="item-label">人権思想</span></div>
+    </div>
+  </div>
+  <span class="page-number">6–7</span>
+</section>
+
+<!-- CHAPTER 4: HINDUISM -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🕉️</span>
+    <div class="chapter-title color-hindu">だい4しょう：ヒンドゥ</div>
+    <div class="chapter-subtitle">— 10おくにんの にじいろの しんこう —</div>
+  </div>
+  <img src="images/ch4.png" alt="ヒンドゥ — 万華鏡のような無数の顔" class="illustration">
+
+  <div class="char-card hindu">
+    <div class="char-name">🕉️ ヒンドゥ <span class="char-species">Hinduism</span></div>
+    <div class="char-quote">
+      かみは ひとつ？ いいえ、かみは むすうに いるわ。<br>
+      でも ぜんぶ ひとつの おおきな ちからの かお かもしれない。<br>
+      ……ややこしい？ それが いいのよ。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill rainbow" style="width: 65%"></div></div>
+      <span>★★★☆☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    ヒンドゥは <strong>ヒンドゥー教</strong> — 世界で 3番目に 大きい 宗教（約10億人）。
+  </p>
+  <p class="story">
+    一神教でも 多神教でもない、ふしぎな 存在。<br>
+    ブラフマン（宇宙の 根源）は ひとつだが、その あらわれかたは 無数。<br>
+    シヴァ、ヴィシュヌ、ガネーシャ、カーリー…… みんな ブラフマンの「顔」。
+  </p>
+  <p class="story">
+    ヒンドゥー教は <strong>カースト制度</strong> の 源でもある。<br>
+    職業と 生まれで 身分が きまる しくみは、何億人もの 人生を しばった。<br>
+    いまの インドでは 法律で 差別は きんしされているが、根は ふかい。
+  </p>
+
+  <div class="highlight-box">
+    <h3>💡 ヒンドゥの にじいろの せかい</h3>
+    <div class="item-grid-title">🕉️ ヒンドゥー教の せかい</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🐘</span><span class="item-label">ガネーシャ</span></div>
+      <div class="item-card"><span class="item-emoji">🔱</span><span class="item-label">シヴァ</span></div>
+      <div class="item-card"><span class="item-emoji">🪷</span><span class="item-label">ヨガ</span></div>
+      <div class="item-card"><span class="item-emoji">🎆</span><span class="item-label">ディワリ</span></div>
+      <div class="item-card"><span class="item-emoji">🍛</span><span class="item-label">ベジタリアン文化</span></div>
+      <div class="item-card"><span class="item-emoji">⚖️</span><span class="item-label">カースト制度</span></div>
+    </div>
+  </div>
+  <span class="page-number">8–9</span>
+</section>
+
+<!-- CHAPTER 5: SCIENCE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🔬</span>
+    <div class="chapter-title color-science">だい5しょう：サイエン先輩</div>
+    <div class="chapter-subtitle">— しゅうきょうを ころしてない —</div>
+  </div>
+  <img src="images/ch5.png" alt="サイエン先輩 — 教会の隣で星空を見上げる" class="illustration">
+
+  <div class="char-card science">
+    <div class="char-name">🔬 サイエン先輩 <span class="char-species">Science</span></div>
+    <div class="char-quote">
+      おれは かみを ころしたんじゃない。<br>
+      おれは ただ、「なぜ？」を べつの ほうほうで きいただけだ。<br>
+      ……きょうかいの となりに、けんきゅうしつが あって なにが わるい？
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill rational" style="width: 85%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    サイエン先輩は <strong>科学</strong>。宗教と おなじ「なぜ？」から うまれた。
+  </p>
+  <p class="story">
+    宗教は「かみが そう した」と こたえた。<br>
+    科学は「じっけんして たしかめよう」と こたえた。<br>
+    方法が ちがうだけで、<strong>出発点は おなじ</strong>。
+  </p>
+  <p class="story">
+    ガリレオは 教会に さばかれた。ダーウィンの 進化論は いまも 議論される。<br>
+    でも 宇宙物理学者の なかには けいけんな クリスチャンも いる。<br>
+    <strong>科学と 宗教は てきじゃない。べつの レンズで おなじ 宇宙を みている。</strong>
+  </p>
+
+  <div class="highlight-box">
+    <h3>💡 サイエン先輩の もうひとつの レンズ</h3>
+    <div class="item-grid-title">🔬 科学の せかい</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🔭</span><span class="item-label">望遠鏡</span></div>
+      <div class="item-card"><span class="item-emoji">🧪</span><span class="item-label">実験</span></div>
+      <div class="item-card"><span class="item-emoji">📐</span><span class="item-label">数学</span></div>
+      <div class="item-card"><span class="item-emoji">🧬</span><span class="item-label">DNA</span></div>
+      <div class="item-card"><span class="item-emoji">🚀</span><span class="item-label">宇宙探査</span></div>
+      <div class="item-card"><span class="item-emoji">🤖</span><span class="item-label">AI</span></div>
+    </div>
+  </div>
+  <span class="page-number">10–11</span>
+</section>
+
+<!-- EPILOGUE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📖</span>
+    <div class="chapter-title">おわりに：かみさまたちの おやくそく</div>
+  </div>
+
+  <p class="story">
+    アニマに おそわったこと — <strong>「にんげんは とくべつじゃない」</strong>。<br>
+    ブッダさんに おそわったこと — <strong>「こたえは じぶんの なかに ある」</strong>。<br>
+    モノさんに おそわったこと — <strong>「ひとつの ものがたりは、ちからにも あらそいにも なる」</strong>。<br>
+    ヒンドゥに おそわったこと — <strong>「ややこしさを うけいれる」</strong>。<br>
+    サイエン先輩に おそわったこと — <strong>「しんじるな、たしかめろ。でも しんじるひとを わらうな」</strong>。
+  </p>
+
+  <div class="highlight-box">
+    <h3>🔑 3つの きほん</h3>
+    <p class="story" style="margin: 0;">
+      <strong>①  問い</strong> — 宗教も科学も「なぜ？」からはじまった。問うことが にんげんらしさ。<br>
+      <strong>②  多様性</strong> — こたえは ひとつじゃない。たくさんの こたえが あっていい。<br>
+      <strong>③  敬意</strong> — じぶんの しんじるものと、ひとの しんじるものは、おなじくらい だいじ。
+    </p>
+  </div>
+
+  <p class="story" style="text-align:center; margin-top: 2rem; font-size: 1.2rem; font-weight: 700; color: #4E342E;">
+    にんげんは、「わからない」が こわかった。<br>
+    だから かみさまを つくった。<br>
+    だから かがくを つくった。<br>
+    「なぜ？」と きく かぎり、にんげんは にんげんだ。
+  </p>
+  <span class="page-number">12</span>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div class="emoji-parade">
+    <span>🌀</span><span>🪷</span><span>☝️</span><span>🕉️</span><span>🔬</span>
+  </div>
+  <div class="finale-title">— おしまい —</div>
+  <div class="finale-message">
+    「かみさまたちの じこしょうかい」<br>
+    え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ
+  </div>
+  <div class="series-links">
+    📚 じこしょうかいシリーズ<br>
+    <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a><br>
+    <a href="https://osakenpiro.github.io/kin-no-ehon/">第1巻「きんたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/mushi-no-ehon/">第2巻「むしたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/kemono-no-ehon/">第3巻「けものたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/kusaki-no-ehon/">第4巻「くさきたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/hatsumei-no-ehon/">第5巻「はつめいたちの じこしょうかい」</a>
+  </div>
+  <div class="colophon">
+    ※ このおはなしは わかりやすさを ゆうせんして かんりゃくかしています。<br>
+    がくじゅつてきな せいかくさについては せんもんしょを ごさんしょうください。
+  </div>
+</section>
+
+</body>
+</html>
